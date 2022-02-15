@@ -3,12 +3,18 @@ package com.tamatech.demo.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.RowBounds;
 
 import com.tamatech.demo.model.Teacher;
 
 @Mapper
 public interface TeacherMapper {
+	
+	Long count();
+	
 //	@Select("SELECT * FROM teacher")
+	List<Teacher> selectAll(RowBounds rowBouns);
+	
 	List<Teacher> selectAll();
 	
 //	@Select({
